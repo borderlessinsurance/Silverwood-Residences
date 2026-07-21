@@ -197,11 +197,31 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
-.hero-bg { position: absolute; inset: 0; z-index: 0; opacity: 0.9; }
-.skyline-svg { width: 100%; height: 100%; }
-.skyline-buildings rect,
-.skyline-buildings path { fill: rgba(201, 169, 97, 0.14); }
-.skyline-horizon { fill: rgba(255,255,255,0.03); }
+/* Your photo: rename it to exactly hero-bg.jpg and place it at the repo root.
+   background-size: cover fills the whole hero area without distorting the photo,
+   cropping edges as needed; background-position: center keeps the middle of the
+   photo (usually the most important part) always visible regardless of screen size. */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark navy tint over the photo so white text is always readable, whatever the
+   photo looks like. Increase the opacity numbers (the 4th value in each rgba)
+   for a darker/moodier look, decrease them to let more of the photo show through. */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg,
+    rgba(13, 16, 36, 0.82) 0%,
+    rgba(18, 22, 43, 0.62) 55%,
+    rgba(27, 35, 64, 0.8) 100%);
+}
 
 .hero-content {
   position: relative;
