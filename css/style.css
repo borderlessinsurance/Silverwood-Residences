@@ -197,15 +197,17 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
-/* Your photo: rename it to exactly hero-bg.jpg and place it at the repo root.
-   background-size: cover fills the whole hero area without distorting the photo,
-   cropping edges as needed; background-position: center keeps the middle of the
-   photo (usually the most important part) always visible regardless of screen size. */
+/* Your photo: rename it to exactly hero-bg.jpg and place it at the repo root (next to
+   index.html, NOT inside the css folder). The "../" below means "go up one folder from
+   where this CSS file lives" — since style.css sits inside css/, this is what correctly
+   points back to the root where hero-bg.jpg actually is. This exact detail was the bug
+   that caused the photo to never show up before — CSS file paths are relative to the
+   CSS file's own location, not to index.html. */
 .hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url('hero-bg.jpg');
+  background-image: url('../hero-bg.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -348,14 +350,15 @@ img { max-width: 100%; display: block; }
   background-size: 26px 26px;
   opacity: 0.5;
 }
-/* Slightly different gradient per district so the placeholder grid isn't monotone.
-   Replace .building-media backgrounds with real photos:
-   .district-sukhumvit { background: url('../images/sukhumvit.jpg') center/cover; } */
-.district-riverside  { background: linear-gradient(135deg, #1b2340, #0d1024); }
-.district-sathorn     { background: linear-gradient(135deg, #232c4d, #12162b); }
+/* Slightly different gradient per building card so the placeholder grid isn't monotone.
+   Replace any of these with a real photo once you have one, e.g.:
+   .district-thonglor { background: url('building-photo.jpg') center/cover; } */
 .district-thonglor    { background: linear-gradient(135deg, #2a355c, #1b2340); }
-.district-ari         { background: linear-gradient(135deg, #1e2748, #0d1024); }
-.district-ploenchit   { background: linear-gradient(135deg, #263155, #12162b); }
+.district-riverside   { background: linear-gradient(135deg, #1b2340, #0d1024); }
+.district-riverside2  { background: linear-gradient(135deg, #232c4d, #12162b); }
+.district-silom       { background: linear-gradient(135deg, #1e2748, #0d1024); }
+.district-wireless    { background: linear-gradient(135deg, #263155, #12162b); }
+.district-phrompong   { background: linear-gradient(135deg, #202a4a, #10142a); }
 
 .district-tag {
   position: relative;
