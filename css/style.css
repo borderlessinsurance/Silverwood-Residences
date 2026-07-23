@@ -274,7 +274,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 .about-frame {
-  aspect-ratio: 5/4;
+  aspect-ratio: 4/5;
   background: var(--navy-900);
   border-radius: var(--radius);
   display: flex;
@@ -500,9 +500,10 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .brand-footer { color: var(--white); }
-.footer-links, .footer-social { display: flex; gap: 26px; font-size: 0.88rem; }
-.footer-links a, .footer-social a { color: rgba(255,255,255,0.7); }
+.footer-links, .footer-social { display: flex; gap: 26px; font-size: 0.88rem; align-items: center; }
+.footer-links a, .footer-social a { color: rgba(255,255,255,0.7); display: flex; align-items: center; }
 .footer-links a:hover, .footer-social a:hover { color: var(--gold); }
+.footer-social a svg { display: block; }
 .footer-bottom { padding-top: 26px; }
 .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin: 0; }
 
