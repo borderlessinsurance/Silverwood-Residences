@@ -274,7 +274,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 .about-frame {
-  aspect-ratio: 4/5;
+  aspect-ratio: 5/4;
   background: var(--navy-900);
   border-radius: var(--radius);
   display: flex;
