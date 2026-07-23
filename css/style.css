@@ -335,24 +335,26 @@ img { max-width: 100%; display: block; }
   padding: 18px;
   background: linear-gradient(135deg, var(--navy-800), var(--navy-950));
 }
+/* Subtle dark scrim at the bottom of every card photo, so the white district
+   badge stays readable regardless of what's in the photo behind it. */
 .building-media::before {
   content: '';
   position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(201,169,97,0.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,169,97,0.16) 1px, transparent 1px);
-  background-size: 26px 26px;
-  opacity: 0.5;
+  background: linear-gradient(180deg, rgba(13,16,36,0) 40%, rgba(13,16,36,0.55) 100%);
 }
-/* Slightly different gradient per building card so the placeholder grid isn't monotone.
-   Replace any of these with a real photo once you have one, e.g.:
-   .district-thonglor { background: url('building-photo.jpg') center/cover; } */
-.district-thonglor    { background: linear-gradient(135deg, #2a355c, #1b2340); }
-.district-riverside   { background: linear-gradient(135deg, #1b2340, #0d1024); }
-.district-riverside2  { background: linear-gradient(135deg, #232c4d, #12162b); }
-.district-silom       { background: linear-gradient(135deg, #1e2748, #0d1024); }
-.district-wireless    { background: linear-gradient(135deg, #263155, #12162b); }
-.district-phrompong   { background: linear-gradient(135deg, #202a4a, #10142a); }
+
+/* PHOTO: each building gets its own photo, layered on top of a navy gradient fallback.
+   To add your photo: name the file exactly as shown below (e.g. monument-thonglor.jpg)
+   and upload it to the repo root, next to index.html — no folder needed. If the file
+   isn't there yet, the gradient just shows on its own — no broken image icon, so these
+   are safe to add one at a time whenever you have each photo ready. Recommended: JPG,
+   at least 800px wide, under ~500KB each so the page still loads fast with all 6. */
+.photo-monument       { background: url('../monument-thonglor.jpg') center/cover, linear-gradient(135deg, #2a355c, #1b2340); }
+.photo-fourseasons    { background: url('../four-seasons.jpg') center/cover, linear-gradient(135deg, #1b2340, #0d1024); }
+.photo-mandarin       { background: url('../mandarin-oriental.jpg') center/cover, linear-gradient(135deg, #232c4d, #12162b); }
+.photo-ritzcarlton    { background: url('../ritz-carlton.jpg') center/cover, linear-gradient(135deg, #1e2748, #0d1024); }
+.photo-one89          { background: url('../one89-wireless.jpg') center/cover, linear-gradient(135deg, #263155, #12162b); }
+.photo-scopelangsuan  { background: url('../scope-langsuan.jpg') center/cover, linear-gradient(135deg, #202a4a, #10142a); }
 
 .district-tag {
   position: relative;
