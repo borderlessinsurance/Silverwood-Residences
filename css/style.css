@@ -140,18 +140,12 @@ img { max-width: 100%; display: block; }
 .brand-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.05em; }
 .brand-sub { font-size: 0.6rem; letter-spacing: 0.3em; color: var(--gold); font-weight: 500; }
 
-/* Your logo is navy artwork on a transparent background, but the header/footer
-   backgrounds are also navy — without help the logo would nearly disappear.
-   This gives it a soft light "chip" behind it so it stays readable. Remove the
-   background/padding/border-radius below if you ever swap in a light-colored
-   (white/gold) version of the logo made specifically for dark backgrounds. */
+/* White version of the logo, made for the navy header/footer backgrounds —
+   no backing chip needed since white-on-navy already has plenty of contrast. */
 .brand-logo-img {
   height: 46px;
   width: auto;
   display: block;
-  background: rgba(247, 244, 238, 0.96);
-  padding: 6px 14px;
-  border-radius: 8px;
 }
 .brand-logo-img-footer { height: 52px; }
 
