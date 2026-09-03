@@ -130,6 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
     frameIo.observe(aboutFrame);
   }
 
+  // ---- CLIENTS COUNTER (live, ticks up over real time) ----
+  // Starts at 189 on the anchor date below and adds +1 every 3 days after
+  // that — so the number keeps climbing on its own with no manual edits.
+  // To reset or rebase it later, just change ANCHOR_DATE to "today" and
+  // ANCHOR_COUNT to whatever the real total is at that moment.
+  const clientsEl = document.getElementById('clientsCount');
+  if (clientsEl) {
+    const ANCHOR_DATE = new Date('2026-09-03T00:00:00Z');
+    const ANCHOR_COUNT = 189;
+    const DAYS_PER_STEP = 3;
+    const msPerDay = 24 * 60 * 60 * 1000;
+    const daysElapsed = Math.max(0, Math.floor((Date.now() - ANCHOR_DATE.getTime()) / msPerDay));
+    const steps = Math.floor(daysElapsed / DAYS_PER_STEP);
+    const liveCount = ANCHOR_COUNT + steps;
+    clientsEl.setAttribute('data-count', String(liveCount));
+  }
+
   // ---- animated stat counters ----
   const counters = document.querySelectorAll('[data-count]');
   const countIo = new IntersectionObserver((entries) => {
